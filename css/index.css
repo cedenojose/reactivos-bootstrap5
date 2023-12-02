@@ -1,0 +1,622 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url("../fonts/WorkSans-Regular.woff2") format(woff2);
+}
+:root {
+    /* ---------------------- */
+    /* PATRON DE COLORES */
+    /* ---------------------- */
+    --color-texto: #111111;
+    --color-primario: #12AFAA;
+    --color-secundario: #009500;
+    --var-opacidad-negro: 0.8;
+}
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+.color-primario {
+    color: var(--color-primario);
+    font-size: 2rem;
+}
+.bienvenidos {
+    background: linear-gradient(rgba(0, 0, 0, var(--var-opacidad-negro)), rgba(0, 0, 0, var(--var-opacidad-negro))), url("../images/startup-594126_640.jpg") no-repeat center;
+    color: #fff;
+    background-size: cover;
+    /* efecto parallax */
+    background-attachment: fixed !important;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.encabezado {
+    background-color: var(--color-texto);
+    color: #fff;
+    padding: .5rem 0;
+    transition: all .5s ease;
+}
+.fondo-menu {
+    background-color: rebeccapurple;
+    color: #fff;
+    padding: 1rem 0;
+}
+.encabezado .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.encabezado a.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.encabezado a.logo h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+}
+.encabezado a img {
+    width: 40px;
+    height: 40px;
+}
+.encabezado a img.rotacion {
+    animation: rotacion-logo 3s infinite linear;
+}
+/* Estilos para el boton: buscar y menu */
+.boton-buscar,
+.boton-menu {
+    border: 0;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 .8rem;
+    background: transparent;
+    color: #fff;
+}
+.boton-buscar:hover,
+.boton-menu:hover {
+    outline: 0;
+}
+.boton-buscar {
+    /* 
+        cuando un elemento es hijo flexibe si se le aplica margin-left auto,
+        toma todo el espacio disponible a su izquierda tambien funciona con margin-right
+    */
+    margin-left: auto;
+}
+/* -------------------------- */
+/* Estilos Bloque Buscar */
+/* -------------------------- */
+
+#bloque-buscar {
+    flex: 1 1 100%;
+}
+.contenedor-bloque-buscar {
+    display: flex;
+    height: 3rem;
+    margin: 1rem 0;
+}
+
+.contenedor-bloque-buscar input[type='text'] {
+    border-radius: 5px 0 0 5px;
+    border: 0;
+    padding: 1rem;
+    flex: 1 1 auto;
+}
+.contenedor-bloque-buscar input[type='submit'] {
+    flex: 0 1 auto;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background: var(--color-primario);
+    color: #fff;
+    padding: 0 1rem;
+}
+/* -------------------------- */
+/* Bloque menu principal */
+/* -------------------------- */
+#menu-principal {
+    flex: 1 1 100%;
+}
+
+#menu-principal ul {
+    padding: 0;
+    list-style: none;
+    margin: 1rem 0 0 0;
+}
+
+#menu-principal ul a {
+    display: block;
+    padding: .8rem 0;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    border-top: 1px solid rgb(207, 201, 201);
+    text-decoration: none;
+}
+#menu-principal ul a:hover,
+#menu-principal ul li.active a {
+    color: var(--color-primario);
+}
+
+.texto-cambezado {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+.texto-cambezado .display-1 {
+    margin-top: 2rem;
+}
+.texto-cambezado .btn-primary {
+    margin-top: 1rem;
+}
+.btn-primary {
+    background-color: var(--color-primario);
+    border-color: transparent;
+    transition: background-color .5s ease;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active:hover {
+    color: #fff;
+    background-color: var(--color-secundario);
+    border-color: transparent;
+}
+
+.flecha-bajar {
+    text-align: center;
+}
+
+.flecha-bajar a {
+    font-size: 4rem;
+    color: #fff;
+    /* propiedad para hacer que la flecha tenga movimiento */
+    display: inline-block;
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+
+/* -------------------------- */
+/* SECCION AGENCIA */
+/* -------------------------- */
+.agencia {
+    background: var(--color-primario);
+    color: #fff ;
+}
+.contenedor-texto-agencia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.img-agencia {
+    width: 300px;
+    height: 300px;
+}
+/* -------------------------- */
+/* SECCION TU-MEJOR-ELECCION */
+/* -------------------------- */
+.tu-mejor-eleccion h2 span {
+    color: var(--color-primario);
+}
+.tu-mejor-eleccion ul {
+    list-style: none;
+}
+.tu-mejor-eleccion ul li {
+    min-height: 9rem;
+}
+.tu-mejor-eleccion ul li .fa {
+    font-size: 2.4rem;
+    background: var(--color-secundario);
+    border-radius: 50%;
+    width: 4.7rem;
+    height: 4.7rem;
+    line-height: 4.7rem;
+    color: #fff;
+}
+.tu-mejor-eleccion ul li .contenedor-eleccion h4 {
+    color: #111111;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0.8rem;
+}
+.tu-mejor-eleccion img {
+    width: 100%;
+}
+/* -------------------------- */
+/* SECCION SERVICIOS */
+/* -------------------------- */
+.servicios {
+    background: linear-gradient(rgba(0, 0, 0, var(--var-opacidad-negro)), rgba(0, 0, 0, var(--var-opacidad-negro))), url('../images/nuestros-servicios-640.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed !important;
+    color: #fff;
+
+}
+.servicios article {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.servicios img {
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
+    /* en caso de que sea svg el formato */
+        /* flex: 0 0 60px; */
+        /* overflow: hidden; */
+        /* no seria necesario el width ni el height */
+    /* final del caso */
+    border-radius: 50%;
+}
+.servicios h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1 1 auto;
+}
+.servicios h3 a {
+    color:#fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicios h3 a::after {
+    content: "\f054";
+    font: var(--fa-font-solid);
+    font-size: 2rem;
+    margin-left: 1rem;
+    opacity: .5;
+    position: relative;
+    left: 0;
+    transition: left .5s ease;
+}
+.servicios h3 a:hover::after {
+    left: -.5rem;
+    opacity: 1;
+    color: var(--color-primario);
+
+}
+/* -------------------------- */
+/* SECCION ULTIMOS PROYECTOS */
+/* -------------------------- */
+/* 
+    owlcarousel2.github.io/OwlCarousel2 y kenwheeler.github.io/slick 
+    opciones interesantes para crear un carrusel de img 
+*/
+.ultimos-proyectos .container {
+    padding: 0;
+}
+.ultimos-proyectos a {
+    text-decoration: none;
+    color: var(--color-texto);
+}
+.ultimos-proyectos a h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+.ultimos-proyectos a img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    
+}
+.owl-carousel .owl-item img {
+    margin: 0 auto;
+}
+.ultimos-proyectos .owl-nav {
+    display: flex;
+    justify-content: center;
+    margin: .3rem 0;
+    /* ya que la img no es cuadrada hay que quitarle margen superior */
+    margin-top: -2rem;
+}
+.ultimos-proyectos .owl-prev,
+.ultimos-proyectos .owl-next {
+    font-size: 3rem !important;
+    margin: 3rem .5rem !important;
+    color: var(--color-primario) !important;
+    transition: color .5s ease !important;
+}
+.ultimos-proyectos .owl-prev:hover,
+.ultimos-proyectos .owl-next:hover {
+    color: var(--color-secundario) !important;
+}
+/* -------------------------- */
+/* SECCION FOOTER */
+/* -------------------------- */
+.footer {
+    background: var(--color-texto);
+    color: #fff;
+    font-size: .9rem;
+    text-align: center;
+}
+.footer p {
+    opacity: .5;
+}
+.footer .redes-sociales {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.footer .redes-sociales a {
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0 1rem;
+    color: #fff;
+    opacity: .5;
+    transition: opacity .5s ease;
+}
+.footer .redes-sociales a:hover {
+    opacity: 1;
+}
+/* -------------------------- */
+/* IR ARRIBA */
+/* -------------------------- */
+.ir-arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--color-texto);
+    font-size: 2.5rem;
+    text-decoration: none;
+    z-index: 999;
+    line-height: 0;
+    display: none;
+    transition: all .5s ease-in-out;
+}
+.ir-arriba:hover {
+    outline: none;
+    color: #fff;
+}
+/* -------------------------- */
+/* PAGINAS INTERNAS - NOSOTROS */
+/* -------------------------- */
+.paginas-internas .bienvenidos {
+    height: 50vh;
+}
+.paginas-internas .ruta {
+    background: var(--color-primario);
+    padding: 1rem 0;
+}
+.paginas-internas .ruta a {
+    text-decoration: underline;
+    color: #fff;
+    transition: text-decoration .5s ease;
+}
+.paginas-internas .ruta a:hover {
+    text-decoration: none;
+}
+.paginas-internas .ruta span {
+    color: #fff;
+}
+
+.paginas-internas aside {
+    text-align: center;
+}
+.paginas-internas aside img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+.paginas-internas article .accordion-button::after {
+    content: none;
+}
+.paginas-internas article .accordion-header .accordion-button {
+    background: var(--color-primario);
+    color: #fff;
+    font-size: 1.2rem;
+    transition: background .5s ease;
+}
+.paginas-internas article .accordion-header .accordion-button:hover {
+    background: var(--color-secundario);
+}
+.paginas-internas article .accordion-body strong {
+    color: var(--color-secundario);
+}
+/* -------------------------- */
+/* PAGINAS INTERNAS - SERVICIOS */
+/* -------------------------- */
+.paginas-internas .lista-servicios {
+    background-color: var(--color-secundario);
+}
+.paginas-internas .lista-servicios .item-servicios {
+    background: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 5px solid var(--color-primario);
+}
+.paginas-internas .lista-servicios .item-servicios .fa-solid {
+    font-size: 6rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+    transition: transform 1s ease;
+}
+.paginas-internas .lista-servicios .item-servicios:hover .fa-solid{
+    transform: rotateY(360deg);
+    transform-style: preserve-3d;
+}
+.paginas-internas .img-modal {
+    width: 100%;
+    height: auto;
+}
+
+/* -------------------------- */
+/* PAGINAS INTERNAS - CONTACTO */
+/* -------------------------- */
+
+
+@keyframes flecha-animada {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes rotacion-logo {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* -------------------------- */
+/* MEDIAS QUERY */
+/* -------------------------- */
+@media (min-width: 768px) {
+    /* -------------------------- */
+    /* MENU BIENVENIDOS */
+    /* -------------------------- */
+    .encabezado .container {
+        position: relative;
+    }
+    .boton-buscar {
+        order: 2;
+        margin-left: 1rem;
+    }
+    #bloque-buscar {
+        order: 3;
+        position: absolute;
+        width: 20rem;
+        right: 1rem;
+        top: 2.9rem;
+    }
+    #menu-principal {
+        display: block;
+        height: auto !important;
+        order: 1;
+        flex: 0 1 auto;
+        margin-left: auto;
+    }
+
+    #menu-principal ul {
+        display: flex;
+        margin: 0;
+    }
+    #menu-principal ul li a {
+        padding: .8rem;
+        text-transform: capitalize;
+        margin: 0 .3rem;
+        border-top: none;
+        border-bottom: 4px solid transparent;
+        transition: border-bottom .5s ease-in-out;
+    }
+    #menu-principal ul li a:hover,
+    #menu-principal ul li.active a {
+        border-bottom: 4px solid var(--color-primario);
+    }
+
+    /* -------------------------- */
+    /* SECCION SERVICIOS */
+    /* -------------------------- */
+    .servicios article {
+        flex-direction: column;
+        text-align: center;
+    }
+    .servicios img {
+        width: 160px;
+        height: 160px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        transition: transform 1s ease;
+    }
+    .servicios article:hover img {
+        transform: rotateY(360deg);
+        transform-style: preserve-3d;
+    }
+    .servicios h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        flex: 0 1 auto;
+    }
+    .servicios h3 a {
+        display: block;
+        width: 100%;
+    }
+    .servicios h3 p {
+        width: 100%;
+    }
+    .servicios h3 a::after {
+        content: none;
+    }
+    .servicios a.btn {
+        margin-top: auto;
+    }
+    /* -------------------------- */
+    /* PAGINAS INTERNAS - SERVICIOS */
+    /* -------------------------- */
+    .paginas-internas .lista-servicios .col-md-4 {
+        display: flex;
+    }
+    .paginas-internas .lista-servicios .item-servicios {
+        display: flex;
+        flex-direction: column;
+    }
+    .paginas-internas .lista-servicios .item-servicios a {
+        margin-top: auto;
+    }
+
+}
+@media (min-width: 992px) {
+    html {
+        font-size: 16px;
+    }
+    .bienvenidos {
+        background: linear-gradient(rgba(0, 0, 0, var(--var-opacidad-negro)), rgba(0, 0, 0, var(--var-opacidad-negro))), url("../images/startup-594126_1280.jpg") no-repeat center;
+        background-size: cover;
+    }
+    /* -------------------------- */
+    /* SECCION TU-MEJOR-ELECCION */
+    /* -------------------------- */
+    .tu-mejor-eleccion ul li{
+        display: flex;
+        text-align: left;
+        min-height: 7rem;
+    }
+    .tu-mejor-eleccion ul li .fa {
+        text-align: center;
+        flex: 0 1 auto;
+        transition: transform .5s ease, background .5s ease;
+
+    }
+    .tu-mejor-eleccion ul li:hover .fa {
+        transform: rotateY(360deg);
+        transform-style: preserve-3d;
+        background: var(--color-primario);
+    }
+    .tu-mejor-eleccion ul:first-child .fa {
+        margin-left: 1rem;
+        order: 1;
+    }
+    .tu-mejor-eleccion ul:last-child .fa {
+        margin-right: 1rem;
+    }
+    .tu-mejor-eleccion ul li .contenedor-eleccion {
+        flex: 1 0 0px;
+    }
+    .tu-mejor-eleccion ul li .contenedor-eleccion h4 {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+    .tu-mejor-eleccion ul li .contenedor-eleccion p {
+        font-size: .85rem;
+    }
+    /* -------------------------- */
+    /* SECCION SERVICIOS */
+    /* -------------------------- */
+    .servicios {
+        background: linear-gradient(rgba(0, 0, 0, var(--var-opacidad-negro)), rgba(0, 0, 0, var(--var-opacidad-negro))), url('../images/nuestros-servicios-1200.jpg') no-repeat center center;
+        background-size: cover;
+    }
+}
