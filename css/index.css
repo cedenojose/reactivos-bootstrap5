@@ -11,6 +11,9 @@
     --color-secundario: #009500;
     --var-opacidad-negro: 0.8;
 }
+html, body {
+    overflow-x: hidden;
+}
 html {
     font-size: 15px;
     scroll-behavior: smooth;

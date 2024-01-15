@@ -10,7 +10,6 @@ AOS.init();
 $(function() {
     $(window).scroll(function () {
         const scrollTop = $(this).scrollTop();
-console.log('ocultar', scrollTop)
         if(scrollTop >= 40) {
             $('.ir-arriba').fadeIn();
         } else {
